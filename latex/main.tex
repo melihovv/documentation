@@ -1,0 +1,87 @@
+% Размер шрифта — 14 pt, размер страницы - A4.
+\documentclass[14pt,a4paper]{extarticle}
+
+% Поля страницы.
+\usepackage[left=3cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+
+% Кодировка документа.
+\usepackage[utf8]{inputenc}
+% Какие языки будут использоваться.
+\usepackage[english,russian]{babel}
+
+% Использовать шрифт Times New Roman.
+\usepackage{times}
+% Кодировка шрифта - с поддержкой русского языка.
+\usepackage[T2A]{fontenc}
+% Для красивого отображения русских шрифтов.
+\usepackage{pscyr}
+% Полуторный интервал. Установит полуторный интервал везде, даже там, где не нужно.
+%\linespread{1.3}
+% Полуторный интервал только там, где нужно.
+\usepackage{setspace}
+\onehalfspacing
+% Если вокруг формул будут большие отступы, раскомментировать.
+%\usepackage[nodisplayskipstretch]{setspace}
+
+% Отступ для параграфов.
+\usepackage{indentfirst}
+
+% Для формул.
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Для вставки картинок.
+\usepackage{graphicx}
+% Путь, где будут лежать картинки.
+\graphicspath{{images/}}
+% Для позиционирования рисунков.
+\usepackage{float}
+% Для смены разделителя с ':' на '.'.
+\RequirePackage{caption}
+\DeclareCaptionLabelSeparator{melpoint}{. }
+\captionsetup{justification=centering,labelsep=melpoint}
+% Для смены "Рис." на "Рисунок".
+\addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+
+% Макрос для вставки рисунка по центру.
+% Первый параметр (необязательный) - ширина рисунка.
+% Второй параметр - путь до рисунка.
+% Третий параметр - подпись к рисунку.
+\newcommand{\melimg}[3][\textwidth]
+{
+    \begin{figure}[H]
+        \center{\includegraphics[scale=1,width=#1]{#2}}
+        \caption{#3}
+        \label{img:#2}
+    \end{figure}
+}
+
+% Чтобы заголовки секций были не жирными. Также запрет переноса строк в заголовках.
+\usepackage{titlesec}
+\titleformat{\section}{\raggedright}{\thesection}{1em}{}
+
+% Чтобы шрифт содержания был не жирным. Также добавляются точки в качестве заполнителя.
+\usepackage{titletoc}
+\titlecontents{section}
+[0pt] % Левая граница.
+{} % Код до.
+{ % Для нумерованных секций.
+    \thecontentslabel\enspace
+}
+{ % Для ненумерованных секций.
+    \contentsmargin{0pt}\large
+}
+{ % Что-то связанное с фильтрацией.
+    \titlerule*[.5pc]{.}\contentspage
+}
+[] % Код после.
+
+% Чтобы можно было кликать по содержимому, а также перенос длинных заголовков в содержании.
+\usepackage[linktocpage,hidelinks]{hyperref}
+
+\begin{document}
+\input{title}
+\input{table_of_contents}
+\input{content}
+\end{document}
