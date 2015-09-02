@@ -14,3 +14,14 @@
 
 \subsection{Hello}
 Hello
+
+Numbered list
+\begin{enumerate}
+    \item one
+    \item two
+    \item three
+        \begin{enumerate}
+            \item\label{part31} three.one
+            \item three.two \ref{part31}
+        \end{enumerate}
+\end{enumerate}

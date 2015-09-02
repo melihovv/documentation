@@ -84,6 +84,11 @@
 % Чтобы можно было кликать по содержимому, а также перенос длинных заголовков в содержании.
 \usepackage[linktocpage,hidelinks]{hyperref}
 
+% Задание маркеров нумерованных списков в виде: 1. 1.1. и т. д.
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumiii}.}
+
 \begin{document}
 \input{title}
 \input{table_of_contents}
