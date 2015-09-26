@@ -60,9 +60,12 @@
     \end{figure}
 }
 
+% Для того, чтобы не было висячих заголовков.
+\usepackage{needspace}
+
 % Чтобы заголовки секций были не жирными. Также запрет переноса строк в заголовках.
 \usepackage{titlesec}
-\titleformat{\section}{\raggedright}{\thesection}{1em}{}
+\titleformat{\section}{\needspace{4\baselineskip}\raggedright}{\thesection}{1em}{}
 \titleformat{\subsection}{\raggedright}{\thesubsection}{1em}{}
 
 % Чтобы шрифт содержания был не жирным. Также добавляются точки в качестве заполнителя.
@@ -89,9 +92,29 @@
 \renewcommand{\labelenumii}{\arabic{enumii}.}
 \renewcommand{\labelenumiii}{\arabic{enumiii}.}
 
+% Задание маркера ненумерованных списков.
 \renewcommand\labelitemi{—}
 \renewcommand\labelitemii{—}
 \renewcommand\labelitemiii{—}
+
+% Для таблиц на нескольких страницах.
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ltxtable}
+
+% Для размещения заголовка таблицы по центру.
+\newcommand*{\thead}[1]{\multicolumn{1}{|c|}{\normalsize #1}}
+
+% Для подстветки кода.
+\usepackage{listings}
+% Для отображения красной стрелки в месте оборачивания строки.
+\usepackage{xcolor}
+% Заворачивать длинные строки.
+\lstset{
+    frame=single,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
 
 \begin{document}
 \input{title}
