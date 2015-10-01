@@ -68,22 +68,6 @@
 \titleformat{\section}{\needspace{4\baselineskip}\raggedright}{\thesection}{1em}{}
 \titleformat{\subsection}{\raggedright}{\thesubsection}{1em}{}
 
-% Чтобы шрифт содержания был не жирным. Также добавляются точки в качестве заполнителя.
-\usepackage{titletoc}
-\titlecontents{section}
-[0pt] % Левая граница.
-{} % Код до.
-{ % Для нумерованных секций.
-    \thecontentslabel\enspace
-}
-{ % Для ненумерованных секций.
-    \contentsmargin{0pt}\large
-}
-{ % Что-то связанное с фильтрацией.
-    \titlerule*[.5pc]{.}\contentspage
-}
-[] % Код после.
-
 % Чтобы можно было кликать по содержимому, а также перенос длинных заголовков в содержании.
 \usepackage[linktocpage,hidelinks]{hyperref}
 
@@ -115,6 +99,38 @@
     breaklines=true,
     postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
 }
+
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\mdseries}
+\renewcommand{\cftsecpagefont}{\mdseries}
+\renewcommand{\cfttoctitlefont}{\mdseries}
+
+\newcommand{\intro}[1]{
+    \newpage
+    \stepcounter{section}
+    \section*{\hfillПриложение \Asbuk{section}}
+    \begin{center}
+        #1
+    \end{center}
+    %\markboth{\MakeUppercase{#1}}{}
+    \markboth{#1}{}
+    \addcontentsline{toc}{section}{Приложение \Asbuk{section}. #1}
+}
+
+%\renewcommand\appendixname{Приложение}
+%\makeatletter
+
+%\def\redeflsection{\def\l@section{\@dottedtocline{1}{0.3em}{6.8em}}}
+
+%\renewcommand\appendix{
+    %\renewcommand\thesection{\Asbuk{section}} % Чтобы приложения русскими буквами нумеровались
+    %\def\@chapapp{\appendixname}
+    %\addtocontents{toc}{\protect\redeflsection}
+    %\def\thesection{\appendixname\hspace{0.2cm}\@arabic\c@section}
+%}
+
+%\makeatother
 
 \begin{document}
 \input{title}
