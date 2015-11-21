@@ -1,18 +1,11 @@
 % Поля страницы.
 \usepackage[left=3cm,right=1cm,top=2cm,bottom=2cm]{geometry}
 
-% Кодировка документа.
-\usepackage[utf8]{inputenc}
-% Какие языки будут использоваться.
-\usepackage[english,russian]{babel}
-
 % Неразрывный пробел.
 \DeclareUnicodeCharacter{00A0}{~}
 
-% Кодировка шрифта - с поддержкой русского языка.
-\usepackage[T2A]{fontenc}
-% Для красивого отображения русских шрифтов.
-\usepackage{pscyr}
+\input{settings/common}
+
 % Полуторный интервал. Установит полуторный интервал везде, даже там, где не нужно.
 %\linespread{1.3}
 % Полуторный интервал только там, где нужно.
@@ -21,18 +14,6 @@
 % Если вокруг формул будут большие отступы, раскомментировать.
 %\usepackage[nodisplayskipstretch]{setspace}
 
-% Отступ для параграфов.
-\usepackage{indentfirst}
-
-% Для формул.
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-
-% Для вставки картинок.
-\usepackage{graphicx}
-% Путь, где будут лежать картинки.
-\graphicspath{{images/}}
 % Для позиционирования рисунков.
 \usepackage{float}
 % Для смены разделителя с ':' на '.'.
@@ -87,6 +68,9 @@
 \renewcommand{\cftsecfont}{\mdseries}
 \renewcommand{\cftsecpagefont}{\mdseries}
 \renewcommand{\cfttoctitlefont}{\mdseries}
+
+% Отступ для параграфов.
+\usepackage{indentfirst}
 
 \input{settings/commands}
 
