@@ -31,8 +31,6 @@
 
 % Для вставки картинок.
 \usepackage{graphicx}
-% Путь, где будут лежать картинки.
-\graphicspath{{images/}}
 % Для позиционирования рисунков.
 \usepackage{float}
 % Для смены разделителя с ':' на '.'.
@@ -88,6 +86,5 @@
 \renewcommand{\cftsecpagefont}{\mdseries}
 \renewcommand{\cfttoctitlefont}{\mdseries}
 
-\usepackage{import}
-\subimport{settings}{commands}
+\input{commands}
 

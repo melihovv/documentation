@@ -1,8 +1,10 @@
 \documentclass[14pt,a4paper]{extarticle}
-\input{settings/settings}
+\usepackage{import}
+\subimport{settings/}{settings}
+\graphicspath{{images/}}
 
 \begin{document}
-\input{title}
-\input{table_of_contents}
-\input{content}
+\subimport{.}{title}
+\subimport{.}{table_of_contents}
+\subimport{.}{content}
 \end{document}
