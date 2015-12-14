@@ -1,7 +1,7 @@
 % Макрос для вставки рисунка по центру.
-% Первый параметр (необязательный) - ширина рисунка.
-% Второй параметр - путь до рисунка.
-% Третий параметр - подпись к рисунку.
+%\arg[opt] Ширина рисунка.
+%\arg Путь до рисунка.
+%\arg Подпись к рисунку.
 \newcommand{\melimg}[3][\textwidth]
 {
     \begin{figure}[H]
@@ -12,6 +12,7 @@
 }
 
 % Для приложения.
+%\arg Заголовок приложения.
 \newcommand{\melappendix}[1]
 {
     \newpage
@@ -23,3 +24,13 @@
     \markboth{#1}{}
     \addcontentsline{toc}{section}{Приложение \Asbuk{section}. #1}
 }
+
+% Макрос для генерации содержания.
+%\arg Номер страницы содержания.
+\newcommand{\meltableofcontent}[1]
+{
+    \setcounter{page}{#1}
+    \tableofcontents
+    \newpage
+}
+
