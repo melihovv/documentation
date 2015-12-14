@@ -29,7 +29,9 @@
 %\arg Номер страницы содержания.
 \newcommand{\meltableofcontents}[1]
 {
-    \setcounter{page}{#1}
+    \ifnum#1>-1
+        \setcounter{page}{#1}
+    \fi
     \tableofcontents
     \newpage
 }
