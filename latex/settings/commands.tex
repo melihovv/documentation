@@ -2,7 +2,7 @@
 %\arg[opt] Ширина рисунка.
 %\arg Путь до рисунка.
 %\arg Подпись к рисунку.
-\newcommand{\melimg}[3][\textwidth]
+\newcommand{\MelImg}[3][\textwidth]
 {
     \begin{figure}[H]
         \center{\includegraphics[scale=1,width=#1]{#2}}
@@ -13,7 +13,7 @@
 
 % Для приложения.
 %\arg Заголовок приложения.
-\newcommand{\melappendix}[1]
+\newcommand{\MelAppend}[1]
 {
     \newpage
     \stepcounter{section}
@@ -27,7 +27,7 @@
 
 % Макрос для генерации содержания.
 %\arg Номер страницы содержания.
-\newcommand{\meltableofcontents}[1]
+\newcommand{\MelToc}[1]
 {
     \ifnum#1>-1
         \setcounter{page}{#1}
@@ -39,7 +39,7 @@
 % Макрос для вставки ненумерованной секции, которая будет отображаться в
 % содержимом.
 %\arg Заголовок секции.
-\newcommand{\melsectionwithoutnumbering}[1]
+\newcommand{\MelUnnumSec}[1]
 {
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
