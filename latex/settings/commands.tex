@@ -36,3 +36,12 @@
     \newpage
 }
 
+% Макрос для вставки ненумерованной секции, которая будет отображаться в
+% содержимом.
+%\arg Заголовок секции.
+\newcommand{\melsectionwithoutnumbering}[1]
+{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+}
+
