@@ -13,16 +13,18 @@
 
 % Для приложения.
 %\arg Заголовок приложения.
-\newcommand{\MelAppend}[1]
+%\arg Метка.
+\newcommand{\MelAppend}[2]
 {
     \newpage
-    \stepcounter{section}
-    \section*{\hfillПриложение \Asbuk{section}}
+    \refstepcounter{MelAppendixCounter}
+    \label{app:#2}
+    \section*{\hfillПриложение \theMelAppendixCounter}
     \begin{center}
         #1
     \end{center}
     \markboth{#1}{}
-    \addcontentsline{toc}{section}{Приложение \Asbuk{section}. #1}
+    \addcontentsline{toc}{section}{Приложение \theMelAppendixCounter. #1}
 }
 
 % Макрос для генерации содержания.
