@@ -48,11 +48,12 @@
 }
 
 % Макрос для вставки списка литературы.
-\newcommand{\MelLiterature}
+%\arg Путь до *.bib файла.
+\newcommand{\MelLiterature}[1]
 {
     \newpage
     \bibliographystyle{utf8gost71u}
-    \bibliography{biblio}
+    \bibliography{#1}
     \addcontentsline{toc}{section}{Список литературы}
 }
 
