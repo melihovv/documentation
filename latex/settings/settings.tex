@@ -100,5 +100,10 @@
 \renewcommand{\cftsecpagefont}{\mdseries}
 \renewcommand{\cfttoctitlefont}{\mdseries}
 
+% Заменяем библиографию с квадратных скобок на точку.
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
 \input{commands}
 
