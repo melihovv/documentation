@@ -9,4 +9,4 @@ biblio:
 	pdflatex $(MAIN_FILE).tex
 
 clear:
-	rm *.pdf *.aux *.log *.gz *.out *.toc *.dvi *.bbl *.blg
+	rm -f *.pdf *.aux *.log *.gz *.out *.toc *.dvi *.bbl *.blg
