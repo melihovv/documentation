@@ -1,8 +1,11 @@
 \documentclass[14pt,a4paper]{extarticle}
-\input{settings/settings-main}
+\usepackage{import}
+\subimport{settings/}{settings}
+\graphicspath{{images/}}
 
 \begin{document}
-\input{title}
-\input{table_of_contents}
-\input{content}
+\subimport{.}{title}
+\MelToc{2}
+\subimport{.}{content}
 \end{document}
+

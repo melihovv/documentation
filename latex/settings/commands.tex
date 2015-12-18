@@ -1,30 +1,59 @@
 % Макрос для вставки рисунка по центру.
-% Первый параметр (необязательный) - ширина рисунка.
-% Второй параметр - путь до рисунка.
-% Третий параметр - подпись к рисунку.
-\newcommand{\melimg}[3][\textwidth]
+%\arg[opt] Ширина рисунка.
+%\arg Путь до рисунка.
+%\arg Подпись к рисунку.
+\newcommand{\MelImg}[3][\textwidth]
 {
-    \begin{figure}[H]
+    \begin{figure}[h]
         \center{\includegraphics[scale=1,width=#1]{#2}}
         \caption{#3}
         \label{img:#2}
     \end{figure}
 }
 
-% Для размещения заголовка таблицы по центру.
-\newcommand*{\thead}[1]{\multicolumn{1}{|c|}{\normalsize #1}}
-
 % Для приложения.
-\newcommand{\melappendix}[1]{
+%\arg Заголовок приложения.
+%\arg Метка.
+\newcommand{\MelAppend}[2]
+{
     \newpage
-    \stepcounter{section}
-    \section*{\hfillПриложение \Asbuk{section}}
+    \refstepcounter{MelAppendixCounter}
+    \label{app:#2}
+    \section*{\hfillПриложение \theMelAppendixCounter}
     \begin{center}
         #1
     \end{center}
     \markboth{#1}{}
-    \addcontentsline{toc}{section}{Приложение \Asbuk{section}. #1}
+    \addcontentsline{toc}{section}{Приложение \theMelAppendixCounter. #1}
 }
 
-% Times New Roman.
-\renewcommand{\rmdefault}{ftm}
+% Макрос для генерации содержания.
+%\arg Номер страницы содержания.
+\newcommand{\MelToc}[1]
+{
+    \ifnum#1>-1
+        \setcounter{page}{#1}
+    \fi
+    \tableofcontents
+    \newpage
+}
+
+% Макрос для вставки ненумерованной секции, которая будет отображаться в
+% содержимом.
+%\arg Заголовок секции.
+\newcommand{\MelUnnumSec}[1]
+{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+}
+
+% Макрос для вставки списка литературы.
+%\arg Путь до *.bib файла.
+\newcommand{\MelLiterature}[1]
+{
+    \newpage
+    \bibliographystyle{utf8gost71u}
+    \bibliography{#1}
+    \addcontentsline{toc}{section}{Список литературы}
+}
+

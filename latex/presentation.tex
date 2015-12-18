@@ -1,18 +1,20 @@
 \documentclass{beamer}
-\input{settings/settings-pres}
+\usepackage{import}
+\subimport{settings/}{settings-pres}
+\graphicspath{{images/}}
 \usetheme{Warsaw}
 
 \begin{document}
 
-\title{Тема}  
+\title{Тема}
 \author{Александр Мелихов}
 \institute{Волгоградский государственный технический университет}
-\date{Волгоград, 2015} 
+\date{Волгоград, 2015}
 
 % Создание заглавной страницы.
-\frame{\titlepage} 
+\frame{\titlepage}
 % Автоматическая генерация содержания.
-\frame{\frametitle{Содержание}\tableofcontents} 
+\frame{\frametitle{Содержание}\tableofcontents}
 
 \begin{frame}{Заголовок слайда}
     Содержимое слайда
@@ -20,7 +22,7 @@
 
 \begin{frame}{Заголовок слайда с картинкой}
     \begin{center}
-        \includegraphics[width=100mm,height=70mm]{class_diagram}  
+        \includegraphics[width=100mm,height=70mm]{class_diagram}
     \end{center}
 \end{frame}
 
